@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryu Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo"><span>R</span>yu</a>
+    
+        <i class='bx bx-menu' id="menu-icon"></i>
+    
+        <nav class="navbar">
+            <a href="index.html#home" class="nav-link" data-target="home">Home</a>
+            <a href="index.html#about" class="nav-link" data-target="about">About</a>
+            <a href="experience.html#experience-education" class="nav-link" data-target="experience-education">Experience & Skill</a>
+            <a href="contact.html" class="nav-link" data-target="contact-1">Contact Me</a>
+        </nav>
+        
+    </header>
+    
+
+    <section id="home" class="home">
+        <div class="home-content">
+            <div class="content-overlay"></div>
+            <h3>Hi...</h3>
+            <h1>I'm <span>Ryu</span>, a Tourism Graduate</h1>
+            <h2>& an<span> IT</span> Student</h2>
+            <p></p>
+           
+            <div class="btn-box">
+                <button class="btn-1">Hire Me</button>
+                <button class="btn-2">Experience</button>
+            </div>
+        </div>
+        <div class="img-box">
+            <img src="image.png" alt="">
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-img">
+            <img src="image.png" alt="">
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Tourism <span>Graduate</span></h3>
+            <p>As a Tourism graduate, I have learned Marketing, Conflict Management, Negotiation, Sustainable Business Strategies, Event Planning, and more.</p>
+            <a href="/Files/RyuCV.pdf" id="downloadCV" class="btn-2">Download CV <i class="fa fa-download"></i></a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="https://api.whatsapp.com/send?phone=+6283894417070" target="_blank" rel="noopener noreferrer"><i class='bx bxl-whatsapp'></i></a>
+            <a href="https://github.com/Mikorine" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
+            <a href="https://www.linkedin.com/in/ryu-andrew-lee-349788251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://steamcommunity.com/profiles/76561199107925677/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-steam'></i></a>
+        </div>
+
+        <ul class="list">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+
+        <p class="copyright">@ 2024 Ryu | All Right Reserved</p>
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+    
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(otherLink => otherLink.classList.remove('active'));
+                link.classList.add('active');
+                const target = document.getElementById(link.dataset.target);
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    <Script src="script.js"></Script>
+
+</body>
+</html>

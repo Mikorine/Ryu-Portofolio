@@ -1,0 +1,532 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 12%; /* Mengurangi padding dari 35px menjadi 20px */
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: padding 0.3s ease; /* Menambahkan efek transisi untuk padding */
+}
+
+#menu-icon {
+    font-size: 42px;
+    color: white;
+    display: none;
+}
+
+.logo {
+    font-size: 25px;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: #1E90FF;
+    text-shadow: 0 0 25px #1E90FF,
+                 0 0 50px #1E90FF;
+    transform: scale(1.1);
+}
+
+span {
+    color: #1E90FF;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    margin: 0 15px; 
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a:active {
+    color: #1E90FF;
+    border-bottom: 3px solid #1E90FF;
+}
+
+.nav-link.active {
+    color: #1E90FF;
+    border-bottom: 3px solid #1E90FF;
+}
+
+@media(max-width: 950px) {
+    #menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        border: 5px solid #1E90FF;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        padding: 1rem 3%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: none;
+        flex-direction: column;
+    }
+    .navbar.active {
+        display: flex;
+    }
+    .navbar a {
+        display: block;
+        color: white;
+        font-size: 1.5rem;
+        margin: 0.5rem 0;
+        text-decoration: none;
+        padding: 0.5rem 0;
+        transition: border-bottom-color 0.3s ease;
+    }
+    .navbar a:hover {
+        border-bottom: 3px solid #1E90FF;
+    }
+}
+
+.home {
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(241, 241, 241);
+    display: flex;
+    align-items: center;
+    gap: 7em;
+    padding: 30px 12% 0;
+    background-image: url("homepage.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    display: flex;
+    align-items: center; 
+    filter: brightness(100%);
+}
+
+.overlay-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Initial transparent background */
+    opacity: 0; /* Initially transparent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Smooth transition for background and opacity */
+}
+
+.overlay-box:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay on hover */
+    opacity: 1; /* Show overlay on hover */
+}
+
+.overlay-box-content {
+    color: black;
+    padding: 20px;
+}
+
+.home-content {
+    max-width: 800px;
+    padding: 20px;
+    margin: auto;
+    position: relative; /* Ensure content is above overlay */
+    z-index: 1; /* Ensure content is above overlay */
+}
+
+.home-content h3 {
+    font-size: 42px;
+    margin: 0 0 10px;
+}
+
+.home-content h1 {
+    font-size: 62px;
+    line-height: 1.2;
+    margin: 0 0 20px;
+}
+
+.home-content h2 {
+    font-size: 43px;
+    line-height: 1.2;
+    margin: 0 0 20px;
+}
+
+.home-content p {
+    font-size: 18px;
+    margin: 25px 0 30px;
+    color: black;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2; /* Ensure paragraph is above overlay */
+}
+
+.home-content p:hover + .overlay-box {
+    opacity: 1; /* Show overlay box when paragraph is hovered */
+    z-index: 2;
+}
+
+.btn-box {
+    width: 345px;
+    display: flex;
+    gap: 2em;
+}
+
+.btn-1 {
+    padding: 15px 28px;
+    background-color: black;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin: 10px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.btn-1:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+.btn-2 {
+    padding: 15px 28px;
+    background-color: #1E90FF;
+    color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.btn-2:hover {
+    background-color: white;
+    color: #1E90FF;
+}
+
+.img-box img {
+    border-radius: 50%;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1E90FF;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 50px;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12% 8%;
+    gap: 10em;
+    background: black;
+}
+
+.about-img img {
+    position: relative;
+    box-shadow: 0 0 25px #1E90FF,
+                0 0 50px #1E90FF;
+    border-radius: 50%;
+}
+
+.about-content h2 {
+    text-align: left;
+    color: white;
+    font-size: 42px;
+}
+
+.about-content h3 {
+    font-size: 62px;
+    color: white;
+}
+
+.about-content p {
+    color: white;
+    font-size: 20px;
+    margin: 2em 0 3em;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-size: 36px;
+}
+
+.contact-form form {
+    max-width: 50em;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.contact-form form .input-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-form form .input-box input,
+.contact-form form textarea {
+    width: 100%;
+    padding: 1.5em;
+    font-size: 18px;
+    color: black;
+    background: rgb(241, 241, 241);
+    border-radius: .8rem;
+    margin: 1rem 0;
+    resize: none;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: black;
+}
+
+.footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: white;
+}
+
+.footer .social a {
+    font-size: 24px;
+    color: white;
+    border: 2px solid #1E90FF;
+    width: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 0px;
+    box-shadow: inset 0 0 10px #1E90FF, 0 0 10px #1E90FF;
+    transition: 0.3s ease;
+}
+
+.footer .social a:hover {
+    transform: scale(1.2) translateY(-10px);
+    color: #1E90FF;
+    border: 2px solid #1E90FF;
+}
+
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.footer ul li a {
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.footer ul li a:hover {
+    border-bottom: 3px solid #1E90FF;
+}
+
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: white;
+}
+
+#experience-education {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 6% 8%;
+    position: relative; /* Membuat garis di tengah */
+}
+
+#experience-education::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #ccc; /* Garis di tengah */
+}
+
+.experience, .skill-box {
+    width: calc(50% - 20px); /* Pastikan lebar kedua elemen sama */
+    padding: 20px;
+    background-color: #333;
+    border: 2px solid #ccc; /* Border sama untuk kanan dan kiri */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Memastikan padding dan border termasuk dalam ukuran elemen */
+}
+
+.experience {
+    display: flex;
+    flex-direction: column; /* Mengatur elemen secara vertikal */
+    text-align: center; /* Mengubah text-align menjadi center */
+    color: white;
+    margin: 10px;
+}
+
+.skill-box {
+    margin-left: 40px; /* Jarak antara skill box dan garis tengah */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px;
+}
+
+.item {
+    margin-bottom: 20px;
+    text-align: left; /* Mengatur item untuk text-align left agar tetap rapi */
+    display: block; /* Menampilkan item sebagai block agar tersusun vertikal */
+}
+
+.item h3 {
+    font-size: 24px;
+    color: white; /* Sesuaikan dengan warna teks yang Anda inginkan */
+    font-weight: bold;
+}
+
+.item h4 {
+    font-size: 20px;
+    color: #ccc; /* Sesuaikan dengan warna teks yang Anda inginkan */
+}
+
+.item p {
+    font-size: 16px;
+    color: #bbb; /* Sesuaikan dengan warna teks yang Anda inginkan */
+    line-height: 1.6;
+}
+
+.skill-bar {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: black; /* Warna background skill bar */
+    border-radius: 8px;
+    text-align: left;
+}
+
+.skill-bar h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: white; /* Sesuaikan dengan warna teks yang Anda inginkan */
+}
+
+.skill-bar .bar {
+    height: 10px;
+    background-color: white; /* Warna bar */
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* Warna dan efek hover */
+.skill-bar:hover {
+    background-color: #333; /* Warna background saat hover */
+}
+
+.skill-bar:hover .bar {
+    background-color: #1E90FF; /* Warna bar saat hover */
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 15px 8%; /* Menyesuaikan padding header untuk layar yang lebih kecil */
+    }
+
+    .logo {
+        font-size: 22px; /* Mengurangi ukuran font logo untuk layar yang lebih kecil */
+    }
+
+    .navbar a {
+        font-size: 16px; /* Mengurangi ukuran font link navbar untuk layar yang lebih kecil */
+        margin: 0 10px; /* Mengurangi margin dari link navbar untuk layar yang lebih kecil */
+    }
+
+    .home {
+        gap: 3em; /* Mengurangi jarak antar elemen di halaman utama untuk layar yang lebih kecil */
+    }
+
+    .btn-box {
+        width: 100%; /* Mengatur lebar kotak tombol untuk layar yang lebih kecil */
+        flex-direction: column; /* Mengatur tata letak tombol vertikal untuk layar yang lebih kecil */
+    }
+
+    .btn-1,
+    .btn-2 {
+        padding: 12px 20px; /* Menyesuaikan padding tombol untuk layar yang lebih kecil */
+        font-size: 16px; /* Menyesuaikan ukuran font tombol untuk layar yang lebih kecil */
+        margin: 10px 0; /* Mengurangi margin tombol untuk layar yang lebih kecil */
+    }
+
+    .about {
+        padding: 8% 4%; /* Mengurangi padding di bagian tentang untuk layar yang lebih kecil */
+        gap: 5em; /* Mengurangi jarak antara elemen di bagian tentang untuk layar yang lebih kecil */
+    }
+
+    .about-img img {
+        width: 200px; /* Menyesuaikan ukuran gambar tentang untuk layar yang lebih kecil */
+        height: 200px;
+    }
+
+    .contact-form h2 {
+        font-size: 30px; 
+        margin-top: 2em; /* Mengurangi margin atas judul formulir kontak untuk layar yang lebih kecil */
+    }
+
+    .contact-form form {
+        max-width: 90%; 
+    }
+
+    .footer ul li {
+        padding: 0 10px; 
+    }
+}
